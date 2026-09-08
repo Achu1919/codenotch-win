@@ -5,10 +5,11 @@ const http = require('http');
 
 const OUT = process.argv[2] || 'e2e';
 const CLICK = process.argv[3] === 'click';
+const PORT = process.env.CN_PORT || '9333';
 
 function getWsUrl() {
   return new Promise((resolve, reject) => {
-    http.get('http://127.0.0.1:9333/json', (res) => {
+    http.get(`http://127.0.0.1:${PORT}/json`, (res) => {
       let body = '';
       res.on('data', (c) => (body += c));
       res.on('end', () => {

@@ -11,6 +11,10 @@ start-with-Windows — all from the gear.
 Inspired by [codenotch](https://github.com/vinzdg/codenotch) (macOS, MIT) — this is the
 Windows port of the concept, built with Electron + React + Tailwind.
 
+| Collapsed pill | Expanded on hover | Settings |
+|---|---|---|
+| ![collapsed pill with usage rings](docs/screenshot-collapsed.png) | ![expanded detail card with reset times](docs/screenshot-expanded.png) | ![settings panel](docs/screenshot-settings.png) |
+
 ## What it tracks
 
 | Provider | Source | Shows |

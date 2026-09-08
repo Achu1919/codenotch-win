@@ -46,7 +46,10 @@ TypeScript. Ships as NSIS installer + portable exe via electron-builder.
   needs approval — prefer **graceful quit via CDP** (`scripts/quit-via-cdp.cjs`,
   `scripts/quit-packaged.cjs`); the app exposes `notch.quit()` IPC for exactly this.
 - Single-instance lock: a second launch just exits silently — check for survivors
-  before assuming a relaunch showed the new build.
+  before assuming a relaunch showed the new build. **The lock is on the userData dir**:
+  run a second instance for screenshots with `--user-data-dir=$TEMP/codenotch-shots`.
+- Dev instance with `--remote-debugging-port` may die silently if the packaged app is
+  also running with the same userData — same fix as above. Check the log file.
 - The window capture via computer_use needs `app='electron'` (dev) or `app='CodeNotch'`
   (packaged), never the productName for the dev build.
 - Hover-expansion via synthetic computer_use clicks doesn't work (no real mousemove);
