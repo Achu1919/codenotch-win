@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  background: transparent;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  cursor: default;
+}
+
+/* The window hugs the content; nothing here should scroll. */
+#root {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+/* Clean dark scrollbars if a list ever overflows */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
