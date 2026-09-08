@@ -4,3 +4,6 @@ release/
 *.log
 .env
 e2e-*.png
+demo/
+dev-launch.log
+electron-debug*.log

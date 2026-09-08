@@ -106,7 +106,7 @@ export default function App() {
         id="notch-card"
         onMouseEnter={() => setView((v) => (v === 'collapsed' ? 'expanded' : v))}
         onMouseLeave={() => setView('collapsed')}
-        className="absolute bottom-2 right-2 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/90 shadow-[0_8px_32px_rgba(0,0,0,0.55)] backdrop-blur-md"
+        className="absolute bottom-2 right-2 overflow-hidden rounded-xl border border-white/10 bg-zinc-950/90 shadow-[0_8px_32px_rgba(0,0,0,0.55)] backdrop-blur-md"
         style={{
           WebkitAppRegion: 'drag',
           width: view === 'collapsed' ? 'fit-content' : 376,
@@ -212,7 +212,7 @@ function ExpandedHeader({
 }) {
   const freshest = Math.max(...snapshots.map((s) => s.lastGoodAt ?? s.lastAttemptAt ?? 0), 0);
   return (
-    <div className="flex items-center gap-2.5 border-b border-white/[0.06] px-3.5 py-2">
+    <div className="flex items-center gap-2.5 border-b border-white/[0.06] py-2 pl-3.5 pr-7">
       {overall != null && <Ring size={20} used={overall} status="ok" />}
       <span className="text-[12px] font-semibold text-zinc-100">Usage</span>
       <span className="font-mono text-[10px] text-zinc-500">{timeAgo(freshest || null)}</span>
